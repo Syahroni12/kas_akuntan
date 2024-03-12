@@ -21,14 +21,14 @@ include('inc/koneksi.php');
     <div class="col-lg-10 mx-auto">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Master Data Jabatan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Master Data Supplier</h1>
         </div>
 
             <!-- Daftar jabatan -->
             <div class="card shadow mb-4">
     <div class="card-header py-3">
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahJabatanModal">
-            <i class="fas fa-plus-circle mr-2"></i> Tambah Jabatan
+            <i class="fas fa-plus-circle mr-2"></i> Tambah Supplier
         </button>
         <?php include 'form/form_tambah_jabatan.php'; ?>
         <?php include 'form/form_edit_jabatan.php'; ?>
@@ -38,10 +38,10 @@ include('inc/koneksi.php');
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th class="text-center">Kode Jabatan</th>
-                        <th class="text-center">Nama Jabatan</th>
-                        <th class="text-center">Gaji Pokok</th>
-                        <th class="text-center">Tunjangan</th>
+                        <th class="text-center">Kode Supplier</th>
+                        <th class="text-center">Nama Supplier</th>
+                        <!-- <th class="text-center">Gaji Pokok</th>
+                        <th class="text-center">Tunjangan</th> -->
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -55,8 +55,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td class='text-center'>" . $row['kode'] . "</td>";
     echo "<td class='text-center'>" . $row['nama'] . "</td>";
-    echo "<td class='text-center'>" . $row['gaji'] . "</td>";
-    echo "<td class='text-center'>" . $row['tunjangan'] . "</td>";
+    // echo "<td class='text-center'>" . $row['gaji'] . "</td>";
+    // echo "<td class='text-center'>" . $row['tunjangan'] . "</td>";
     echo "<td class='text-center'>";
     echo "<button class='btn btn-info btn-sm editBtn' data-toggle='modal' data-target='#editJabatanModal' data-id='" . $row['id'] . "' data-kode='" . $row['kode'] . "' data-nama='" . $row['nama'] . "' data-gaji='" . $row['gaji'] . "' data-tunjangan='" . $row['tunjangan'] . "'><i class='fas fa-edit'></i> Edit</button>";
     echo "<span class='mx-1'></span>";

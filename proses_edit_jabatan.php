@@ -8,15 +8,15 @@ if (!isset($_SESSION['user_id'])) {
 include('inc/koneksi.php');
 
 // Pastikan data yang diterima valid
-if (isset($_POST['edit_id']) && isset($_POST['edit_kode']) && isset($_POST['edit_nama']) && isset($_POST['edit_gaji']) && isset($_POST['edit_tunjangan'])) {
+if (isset($_POST['edit_id']) && isset($_POST['edit_kode']) && isset($_POST['edit_nama'])) {
     $id = $_POST['edit_id'];
     $kode = $_POST['edit_kode'];
     $nama = $_POST['edit_nama'];
-    $gaji = $_POST['edit_gaji'];
-    $tunjangan = $_POST['edit_tunjangan'];
+    // $gaji = $_POST['edit_gaji'];
+    // $tunjangan = $_POST['edit_tunjangan'];
 
     // Lakukan proses update di database
-    $query = "UPDATE jabatan SET kode='$kode', nama='$nama', gaji='$gaji', tunjangan='$tunjangan' WHERE id='$id'";
+    $query = "UPDATE jabatan SET kode='$kode', nama='$nama' WHERE id='$id'";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {

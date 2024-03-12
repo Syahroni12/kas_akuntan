@@ -12,11 +12,11 @@
                 <form id="editPengurusForm" action="proses_edit_pengurus.php" method="POST">
                     <input type="hidden" id="edit_id" name="edit_id">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="edit_nama">Nama:</label>
                             <input type="text" class="form-control" id="edit_nama" name="edit_nama" required>
                         </div>
-                        <div class="form-group col-md-6">
+                        <!-- <div class="form-group col-md-6">
                             <label for="edit_id_jabatan">Jabatan:</label>
                             <select class="form-control" id="edit_id_jabatan" name="edit_id_jabatan" required>
                                 <option value="">Pilih Jabatan</option>
@@ -29,9 +29,9 @@
                                 }
                                 ?>
                             </select>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="form-row">
+                    <!-- <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="edit_telepon">Telepon:</label>
                             <input type="text" class="form-control" id="edit_telepon" name="edit_telepon" required>
@@ -52,7 +52,7 @@
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn btn-info"><i class="fas fa-edit mr-2"></i>Simpan Perubahan</button>
                 </form>
             </div>

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $total_expenses = calculateTotalExpenses($expenses);
 } else {
     // Ambil semua data pengeluaran dari database dan urutkan berdasarkan tanggal (paling baru ke paling lama)
-    $query = "SELECT pengeluaran.*, pengurus.nama AS nama_pengurus FROM pengeluaran JOIN pengurus ON pengeluaran.pengurus_id = pengurus.id ORDER BY pengeluaran.tanggal DESC";
+    $query = "SELECT pengeluaran.*, pengurus.nama AS nama_pengurus FROM pengeluaran JOIN pengurus ON pengeluaran.id_pengurus = pengurus.id ORDER BY pengeluaran.tanggal DESC";
     $result = mysqli_query($koneksi, $query);
     $expenses = [];
     while ($row = mysqli_fetch_assoc($result)) {
@@ -71,7 +71,7 @@ if (isset($_GET['unduh'])) {
                             <thead>
                                 <tr>
                                     <th class="text-center">Tanggal</th>
-                                    <th class="text-center">Nama Pengurus</th>
+                                    <th class="text-center">Nama Akun</th>
                                     <th class="text-center">Keterangan</th>
                                     <th class="text-center">Jumlah</th>
                                 </tr>
@@ -82,14 +82,16 @@ if (isset($_GET['unduh'])) {
                                         <td class="text-center"><?php echo $expense['tanggal']; ?></td>
                                         <td><?php echo $expense['nama_pengurus']; ?></td>
                                         <td><?php echo $expense['keterangan']; ?></td>
-                                        <td class="text-right"><?php echo $expense['jumlah']; ?></td>
+                                        <td class="text-right"><?php echo "Rp " . number_format($expense['jumlah'], 0, ',', '.'); ?></td>
+
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <td colspan="3" class="font-weight-bold text-right">Total Pengeluaran</td>
-                                    <td class="text-right"><?php echo $total_expenses; ?></td>
+                               <td class="text-right"><?php echo "Rp " . number_format($total_expenses, 0, ',', '.'); ?></td>
+
                                 </tr>
                             </tfoot>
                         </table>

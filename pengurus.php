@@ -20,7 +20,7 @@ include('inc/koneksi.php');
     <div class="col-lg-10 mx-auto">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Master Data Pegawai</h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Akun</h1>
         </div>
 
         <!-- Daftar pengurus -->
@@ -34,28 +34,30 @@ include('inc/koneksi.php');
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th class="text-center">Nama</th>
-                                <th class="text-center">Jabatan</th>
-                                <th class="text-center">Telepon</th>
+                                <th class="text-center">Kode Akun</th>
+                                <th class="text-center">Nama Akun</th>
+                                <!-- <th class="text-center">Jabatan</th> -->
+                                <!-- <th class="text-center">Telepon</th>
                                 <th class="text-center">Email</th>
                                 <th class="text-center">Alamat</th>
-                                <th class="text-center">Jenis Kelamin</th>
+                                <th class="text-center">Jenis Kelamin</th> -->
                             </tr>
                         </thead>
                         <tbody>
                             <!-- Daftar pengurus dari database -->
                             <?php
                             include('inc/koneksi.php');
-                            $query = "SELECT pengurus.*, jabatan.nama AS nama_jabatan FROM pengurus JOIN jabatan ON pengurus.id_jabatan = jabatan.id";
+                            $query = "SELECT * FROM pengurus";
                             $result = mysqli_query($koneksi, $query);
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
+                                echo "<td class='text-center'>" . $row['id'] . "</td>";
                                 echo "<td class='text-center'>" . $row['nama'] . "</td>";
-                                echo "<td class='text-center'>" . $row['nama_jabatan'] . "</td>";
-                                echo "<td class='text-center'>" . $row['telepon'] . "</td>";
-                                echo "<td class='text-center'>" . $row['email'] . "</td>";
-                                echo "<td class='text-center'>" . $row['alamat'] . "</td>";
-                                echo "<td class='text-center'>" . $row['jenis_kelamin'] . "</td>";
+                                // echo "<td class='text-center'>" . $row['nama_jabatan'] . "</td>";
+                                // echo "<td class='text-center'>" . $row['telepon'] . "</td>";
+                                // echo "<td class='text-center'>" . $row['email'] . "</td>";
+                                // echo "<td class='text-center'>" . $row['alamat'] . "</td>";
+                                // echo "<td class='text-center'>" . $row['jenis_kelamin'] . "</td>";
                                 echo "</tr>";
                             }
                             ?>

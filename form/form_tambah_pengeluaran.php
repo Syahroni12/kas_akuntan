@@ -21,9 +21,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="pengurus_id">Penanggung Jawab:</label>
-                        <select class="form-control" id="pengurus_id" name="pengurus_id" required>
-                            <option value="">Pilih PJ</option>
+                        <label for="id_pengurus">Nama Akun:</label>
+                        <select class="form-control" id="id_pengurus" name="id_pengurus" required>
+                            <option value="">Pilih Akun</option>
                             <?php
                             include('inc/koneksi.php');
                             $query = "SELECT * FROM pengurus";

@@ -60,8 +60,8 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Perusahaan:</h6>
-            <a class="collapse-item" href="jabatan.php">Jabatan</a>
-            <a class="collapse-item" href="pengurus.php">pegawai</a>
+            <a class="collapse-item" href="jabatan.php">Supplier</a>
+            <a class="collapse-item" href="pengurus.php">Akun</a>
         </div>
     </div>
 </li>

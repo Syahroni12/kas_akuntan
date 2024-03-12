@@ -8,16 +8,17 @@ if (!isset($_SESSION['user_id'])) {
 include('inc/koneksi.php');
 
 // Pastikan data yang diterima valid
-if (isset($_POST['nama']) && isset($_POST['id_jabatan']) && isset($_POST['telepon']) && isset($_POST['email']) && isset($_POST['alamat']) && isset($_POST['jenis_kelamin'])) {
+if (isset($_POST['nama']) && isset($_POST['id'])) {
+    $id = $_POST['id'];
     $nama = $_POST['nama'];
-    $id_jabatan = $_POST['id_jabatan'];
-    $telepon = $_POST['telepon'];
-    $email = $_POST['email'];
-    $alamat = $_POST['alamat'];
-    $jenis_kelamin = $_POST['jenis_kelamin'];
+    // $id_jabatan = $_POST['id_jabatan'];
+    // $telepon = $_POST['telepon'];
+    // $email = $_POST['email'];
+    // $alamat = $_POST['alamat'];
+    // $jenis_kelamin = $_POST['jenis_kelamin'];
 
     // Lakukan proses tambah data pengurus ke dalam database
-    $query = "INSERT INTO pengurus (nama, id_jabatan, telepon, email, alamat, jenis_kelamin) VALUES ('$nama', '$id_jabatan', '$telepon', '$email', '$alamat', '$jenis_kelamin')";
+    $query = "INSERT INTO pengurus (id,nama) VALUES ('$id','$nama')";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {

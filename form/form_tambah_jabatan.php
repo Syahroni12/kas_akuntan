@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-success text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Jabatan</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Supplier</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,21 +12,21 @@
                 <!-- Form Tambah Jabatan -->
                 <form action="proses_tambah_jabatan.php" method="POST">
                     <div class="form-group">
-                        <label for="kode">Kode Jabatan:</label>
+                        <label for="kode">Kode Supplier:</label>
                         <input type="text" class="form-control" id="kode" name="kode" required>
                     </div>
                     <div class="form-group">
-                        <label for="nama">Nama Jabatan:</label>
+                        <label for="nama">Nama Supplier:</label>
                         <input type="text" class="form-control" id="nama" name="nama" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="gaji">Gaji Pokok:</label>
                         <input type="text" class="form-control" id="gaji" name="gaji" required>
                     </div>
                     <div class="form-group">
                         <label for="tunjangan">Tunjangan:</label>
                         <input type="text" class="form-control" id="tunjangan" name="tunjangan" required>
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn btn-success"><i class="fas fa-save mr-2"></i>Simpan</button>
                 </form>
             </div>

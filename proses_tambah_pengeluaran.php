@@ -8,15 +8,15 @@ if (!isset($_SESSION['user_id'])) {
 include('inc/koneksi.php');
 
 // Pastikan data yang diterima valid
-if (isset($_POST['nomor_nota']) && isset($_POST['tanggal']) && isset($_POST['pengurus_id']) && isset($_POST['jumlah'])) {
+if (isset($_POST['nomor_nota']) && isset($_POST['tanggal']) && isset($_POST['id_pengurus']) && isset($_POST['jumlah'])) {
     $nomor_nota = $_POST['nomor_nota'];
     $tanggal = $_POST['tanggal'];
-    $pengurus_id = $_POST['pengurus_id'];
+    $id_pengurus = $_POST['id_pengurus'];
     $keterangan = isset($_POST['keterangan']) ? $_POST['keterangan'] : '';
     $jumlah = $_POST['jumlah'];
 
     // Lakukan proses tambah penerimaan kas ke database
-    $query = "INSERT INTO pengeluaran (nomor_nota, tanggal, pengurus_id,  keterangan, jumlah) VALUES ('$nomor_nota', '$tanggal', '$pengurus_id', '$keterangan', '$jumlah')";
+    $query = "INSERT INTO pengeluaran (nomor_nota, tanggal, id_pengurus,  keterangan, jumlah) VALUES ('$nomor_nota', '$tanggal', '$id_pengurus', '$keterangan', '$jumlah')";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {

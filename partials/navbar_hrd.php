@@ -35,7 +35,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">HRD</div>
+    <div class="sidebar-brand-text mx-3">DATA</div>
 </a>
 
 <!-- Divider -->
@@ -60,8 +60,8 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Perusahaan:</h6>
-            <a class="collapse-item" href="jabatan_hrd.php">Jabatan</a>
-            <a class="collapse-item" href="pengurus_hrd.php">pegawai</a>
+            <a class="collapse-item" href="jabatan_hrd.php">Supplier</a>
+            <a class="collapse-item" href="pengurus_hrd.php">Akun</a>
         </div>
     </div>
 </li>

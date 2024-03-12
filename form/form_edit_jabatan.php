@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
-                <h5 class="modal-title" id="editJabatanModalLabel">Edit Jabatan</h5>
+                <h5 class="modal-title" id="editJabatanModalLabel">Edit Supplier</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,21 +13,21 @@
     <form id="editJabatanModal" action="proses_edit_jabatan.php" method="POST">
         <input type="hidden" id="edit_id" name="edit_id">
         <div class="form-group">
-            <label for="edit_kode">Kode Jabatan:</label>
+            <label for="edit_kode">Kode Supplier:</label>
             <input type="text" class="form-control" id="edit_kode" name="edit_kode" required>
         </div>
         <div class="form-group">
-            <label for="edit_nama">Nama Jabatan:</label>
+            <label for="edit_nama">Nama Supplier:</label>
             <input type="text" class="form-control" id="edit_nama" name="edit_nama" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="edit_gaji">Gaji Pokok:</label>
             <input type="text" class="form-control" id="edit_gaji" name="edit_gaji" required>
         </div>
         <div class="form-group">
             <label for="edit_tunjangan">Tunjangan:</label>
             <input type="text" class="form-control" id="edit_tunjangan" name="edit_tunjangan" required>
-        </div>
+        </div> -->
         <button type="submit" class="btn btn-info"><i class="fas fa-edit mr-2"></i>Simpan Perubahan</button>
     </form>
 </div>

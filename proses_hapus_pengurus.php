@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 $id_pengurus = $_GET['id'];
 
 // Hapus terlebih dahulu data terkait di tabel penerimaan
-$query_hapus_penerimaan = "DELETE FROM pengeluaran WHERE pengurus_id = $id_pengurus";
+$query_hapus_penerimaan = "DELETE FROM pengeluaran WHERE id_pengurus = $id_pengurus";
 $result_hapus_penerimaan = mysqli_query($koneksi, $query_hapus_penerimaan);
 
 // Periksa apakah penghapusan penerimaan berhasil

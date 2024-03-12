@@ -22,9 +22,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="edit_pengurus_id">Penanggung Jawab:</label>
+                        <label for="edit_pengurus_id">Akun</label>
                         <select class="form-control" id="edit_pengurus_id" name="edit_pengurus_id" required>
-                            <option value="">Pilih PJ</option>
+                            <option value="">Pilih Akun</option>
                             <?php
                             include('inc/koneksi.php');
                             $query = "SELECT * FROM pengurus";

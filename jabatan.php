@@ -21,7 +21,7 @@ include('inc/koneksi.php');
     <div class="col-lg-10 mx-auto">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Master Data Jabatan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Supplier</h1>
         </div>
 
             <!-- Daftar jabatan -->
@@ -36,10 +36,10 @@ include('inc/koneksi.php');
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th class="text-center">Kode Jabatan</th>
-                        <th class="text-center">Nama Jabatan</th>
-                        <th class="text-center">Gaji Pokok</th>
-                        <th class="text-center">Tunjangan</th>
+                        <th class="text-center">Kode Supplier</th>
+                        <th class="text-center">Nama Supplier</th>
+                        <!-- <th class="text-center">Gaji Pokok</th>
+                        <th class="text-center">Tunjangan</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -52,8 +52,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td class='text-center'>" . $row['kode'] . "</td>";
     echo "<td class='text-center'>" . $row['nama'] . "</td>";
-    echo "<td class='text-center'>" . $row['gaji'] . "</td>";
-    echo "<td class='text-center'>" . $row['tunjangan'] . "</td>";
+    // echo "<td class='text-center'>" . $row['gaji'] . "</td>";
+    // echo "<td class='text-center'>" . $row['tunjangan'] . "</td>";
     echo "</tr>";
 }
 ?>

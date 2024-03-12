@@ -39,7 +39,7 @@ include('inc/koneksi.php');
                             <tr>
                                 <th class="text-center">Nomor Nota</th>
                                 <th class="text-center">Tanggal</th>
-                                <th class="text-center">Penanggung Jawab</th>
+                                <th class="text-center">Nama Akun</th>
                                 <th class="text-center">Keterangan</th>
                                 <th class="text-center">Jumlah</th>
                                 <th class="text-center">Aksi</th>
@@ -47,7 +47,7 @@ include('inc/koneksi.php');
                         </thead>
                         <tbody>
                             <?php
-                            $query_pengeluaran = "SELECT p.*, pengurus.nama AS nama_pengurus FROM pengeluaran p JOIN pengurus ON p.pengurus_id = pengurus.id";
+                            $query_pengeluaran = "SELECT p.*, pengurus.nama AS nama_pengurus FROM pengeluaran p JOIN pengurus ON p.id_pengurus = pengurus.id";
                             $result_pengeluaran = mysqli_query($koneksi, $query_pengeluaran);
                             while ($row_pengeluaran = mysqli_fetch_assoc($result_pengeluaran)) {
                                 echo "<tr>";
@@ -55,7 +55,8 @@ include('inc/koneksi.php');
                                 echo "<td>" . $row_pengeluaran['tanggal'] . "</td>";
                                 echo "<td>" . $row_pengeluaran['nama_pengurus'] . "</td>";
                                 echo "<td>" . $row_pengeluaran['keterangan'] . "</td>";
-                                echo "<td>" . $row_pengeluaran['jumlah'] . "</td>";
+                                echo "<td> Rp " . number_format($row_pengeluaran['jumlah'], 0, ',', '.') . "</td>";
+
                                 echo "<td class='text-center'>";
                                 echo "<button class='btn btn-info btn-sm editBtn' data-toggle='modal' data-target='#editPengeluaranModal' data-id='" . $row_pengeluaran['id'] . "' data-nomor-nota='" . $row_pengeluaran['nomor_nota'] . "' data-tanggal='" . $row_pengeluaran['tanggal'] . "' data-nama-pengurus='" . $row_pengeluaran['nama_pengurus'] ."' data-keterangan='" . $row_pengeluaran['keterangan'] . "' data-jumlah='" . $row_pengeluaran['jumlah'] . "'><i class='fas fa-edit'></i> Edit</button>";
                                 echo "<span class='mx-1'></span>";
