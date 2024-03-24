@@ -31,7 +31,7 @@
 <ul class="navbar-nav bg-gray-700 sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
@@ -60,8 +60,9 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Perusahaan:</h6>
-            <a class="collapse-item" href="jabatan_hrd.php">Supplier</a>
-            <a class="collapse-item" href="pengurus_hrd.php">Akun</a>
+            <!-- <a class="collapse-item" href="jabatan_hrd.php">Divisi</a> -->
+            <a class="collapse-item" href="pengurus_hrd.php">Divisi</a>
+            <a class="collapse-item" href="kategori_akun.php">Kategori akun</a>
         </div>
     </div>
 </li>

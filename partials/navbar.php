@@ -60,8 +60,8 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Data Perusahaan:</h6>
-            <a class="collapse-item" href="jabatan.php">Supplier</a>
-            <a class="collapse-item" href="pengurus.php">Akun</a>
+            <a class="collapse-item" href="jabatan.php">Divisi</a>
+            <a class="collapse-item" href="pengurus.php">Uraian Pengeluaran</a>
         </div>
     </div>
 </li>
@@ -87,7 +87,7 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-<li class="nav-item">
+<!-- <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
         aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
@@ -100,7 +100,7 @@
 
         </div>
     </div>
-</li>
+</li> -->
 
 
 <!-- Divider -->

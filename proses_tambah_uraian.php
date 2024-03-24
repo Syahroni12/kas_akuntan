@@ -8,9 +8,10 @@ if (!isset($_SESSION['user_id'])) {
 include('inc/koneksi.php');
 
 // Pastikan data yang diterima valid
-if (isset($_POST['divisi']) && isset($_POST['penanggung_jawab'])) {
-    $penanggung_jawab = $_POST['penanggung_jawab'];
-    $divisi = $_POST['divisi'];
+if (isset($_POST['uraian'])) {
+    $uraian = $_POST['uraian'];
+    // $id = $_POST['id'];
+    // $kategori = $_POST['kategori_pengeluaran'];
     // $id_jabatan = $_POST['id_jabatan'];
     // $telepon = $_POST['telepon'];
     // $email = $_POST['email'];
@@ -18,13 +19,13 @@ if (isset($_POST['divisi']) && isset($_POST['penanggung_jawab'])) {
     // $jenis_kelamin = $_POST['jenis_kelamin'];
 
     // Lakukan proses tambah data pengurus ke dalam database
-    $query = "INSERT INTO pengurus (divisi,penanggung_jawab) VALUES ('$divisi','$penanggung_jawab')";
+    $query = "INSERT INTO uraian_pngl (uraian) VALUES ('$uraian')";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
         // Jika proses tambah data berhasil, arahkan kembali ke halaman pengurus
         $_SESSION['berhasil_tambah'] = '<div class="alert alert-success" role="alert">Data berhasil di tambah.</div>';
-        header("Location: pengurus_hrd.php");
+        header("Location: kategori_akun.php");
         exit();
     } else {
         // Jika terjadi kesalahan, tampilkan pesan error

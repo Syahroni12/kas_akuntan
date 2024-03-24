@@ -12,11 +12,11 @@
                 <!-- Form Tambah Jabatan -->
                 <form action="proses_tambah_jabatan.php" method="POST">
                     <div class="form-group">
-                        <label for="kode">Kode Supplier:</label>
+                        <label for="kode">Kode Divisi:</label>
                         <input type="text" class="form-control" id="kode" name="kode" required>
                     </div>
                     <div class="form-group">
-                        <label for="nama">Nama Supplier:</label>
+                        <label for="nama">Nama Divisi:</label>
                         <input type="text" class="form-control" id="nama" name="nama" required>
                     </div>
                     <!-- <div class="form-group">

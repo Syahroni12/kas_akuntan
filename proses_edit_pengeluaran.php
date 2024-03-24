@@ -7,17 +7,20 @@ if (!isset($_SESSION['user_id'])) {
 include('inc/koneksi.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['edit_id'];
-    $nomor_nota = $_POST['edit_nomor_nota'];
-    $tanggal = $_POST['edit_tanggal'];
-    $pengurus_id = $_POST['edit_pengurus_id'];
-    $keterangan = $_POST['edit_keterangan'];
-    $jumlah = $_POST['edit_jumlah'];
+    $id = $_POST['id'];
+    $nomor_nota = $_POST['nomor_notaa'];
+    $tanggal = $_POST['tanggal'];
+    $pengurus_id = $_POST['id_pengurus'];
+    $keterangan = $_POST['id_uraianpngl'];
+ 
+    $jumlah = $_POST['jumlah'];
+    $jumlah_fix = preg_replace("/[^0-9]/", "", $jumlah);
 
-    $query = "UPDATE pengeluaran SET nomor_nota='$nomor_nota', tanggal='$tanggal', pengurus_id='$pengurus_id', keterangan='$keterangan', jumlah='$jumlah' WHERE id='$id'";
+    $query = "UPDATE pengeluaran SET nomor_nota='$nomor_nota', tanggal='$tanggal', id_pengurus='$pengurus_id', id_uraianpngl='$keterangan', jumlah='$jumlah_fix' WHERE id='$id'";
     
     if (mysqli_query($koneksi, $query)) {
-        header("Location: penerima_kas.php");
+        $_SESSION['berhasil_ubah'] = '<div class="alert alert-success" role="alert">Data berhasil di ubah.</div>';
+        header("Location: pengeluaran.php");
         exit();
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($koneksi);

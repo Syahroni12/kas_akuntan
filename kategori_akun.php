@@ -26,12 +26,12 @@ while ($row = mysqli_fetch_assoc($result)) {
 </head>
 
 <body>
-    <?php include 'partials/navbar.php'; ?>
+    <?php include 'partials/navbar_hrd.php'; ?>
     <div class="container-fluid">
         <div class="col-lg-10 mx-auto">
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Master Data Kategori Pengeluaran</h1>
+                <h1 class="h3 mb-0 text-gray-800">Master Data Uraian Pengeluaran</h1>
             </div>
 
             <!-- Daftar pengurus -->
@@ -59,7 +59,10 @@ while ($row = mysqli_fetch_assoc($result)) {
                         unset($_SESSION['gagal']);
                     }
                     ?>
-                    <!--  -->
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahUraianModal">
+                        <i class="fas fa-plus-circle mr-2"></i> Tambah Data Uraian pengeluaran
+                    </button>
+                    <?php include 'form/form_tambah_uraian.php'; ?>
 
                 </div>
                 <div class="card-body">
@@ -67,7 +70,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <!-- <th class="text-center">Kode Uraian </th> -->
+                             
                                     <th class="text-center">Kategori</th>
                                     <!-- <th class="text-center">Nama Kategori</th> -->
                                     <!-- <th class="text-center">Divisi</th> -->
@@ -75,7 +78,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 <th class="text-center">Email</th>
                                 <th class="text-center">Alamat</th>
                                 <th class="text-center">Jenis Kelamin</th> -->
-                                  
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,10 +86,16 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                                 <?php foreach ($data as $row) : ?>
                                     <tr>
-                                        <!-- <td class='text-center'><?php echo $row['id']; ?></td> -->
+                                      
                                         <td class='text-center'><?php echo $row['uraian']; ?></td>
-                                        <!-- <td class='text-center'><?php echo $row['kategori_pengeluaran']; ?></td> -->
-                                        
+                                    
+                                        <td class='text-center'>
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal" onclick='edit(<?= json_encode($row); ?>)'>
+                                                <i class="fas fa-pen"></i>edit
+                                            </button>
+                                            <span class='mx-1'></span>
+                                            <a href='proses_hapus_uraian.php?id=<?php echo $row['id']; ?>' class='btn btn-danger btn-sm' onclick='return confirm("Anda yakin ingin menghapus pengurus ini?")'><i class='fas fa-trash'></i> Hapus</a>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
 
@@ -111,24 +120,24 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <!-- Form Tambah Pengurus -->
                         <form action="proses_edit_uraian.php" method="POST">
                             <div class="form-row">
-                                <div class="form-group col-md-12">
+                                <!-- <div class="form-group col-md-12">
                                     <label for="id">id</label>
                                     <input type="number" class="form-control" id="id_edit" name="idd" required>
-                                </div>
+                                </div> -->
                                 <input type="hidden" id="edit_as" name="id">
                           
                                 <div class="form-group col-md-12">
                                     <label for="uraian">Uraian</label>
                                     <input type="text" class="form-control" id="uraian_edit" name="uraian" required>
                                 </div>
-                                <div class="form-group col-md-12">
+                                <!-- <div class="form-group col-md-12">
                                     <label for="Kategori"> Kategori Uraian</label>
-                                    <select class="form-control" id="kategori_pengeluaran_edit" name="kategori_pengeluaran" required>
+                                    <select class="form-control" id="kategori_pengeluaran_edit" name="kategori_pengeluaran" required> -->
                                         <!-- <option value="">Pilih Kategori</option> -->
-                                        <option value="administrasi dan umum">administrasi dan umum</option>
+                                        <!-- <option value="administrasi dan umum">administrasi dan umum</option>
                                         <option value="operasional">operasional</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <!-- <div class="form-group col-md-6">
                 <label for="id_jabatan">Divisi:</label>
                 <select class="form-control" id="id_jabatan" name="id_jabatan" required>
@@ -163,16 +172,16 @@ while ($row = mysqli_fetch_assoc($result)) {
                 // console.log(data);
 
 
-                document.getElementById('id_edit').value = data.id
+                // document.getElementById('id_edit').value = data.id
                 document.getElementById('edit_as').value = data.id
                 document.getElementById('uraian_edit').value = data.uraian
-                var select = document.getElementById('kategori_pengeluaran_edit');
-                for (var i = 0; i < select.options.length; i++) {
-                    if (select.options[i].value === data.kategori_pengeluaran) {
-                        select.selectedIndex = i;
-                        break;
-                    }
-                }
+                // var select = document.getElementById('kategori_pengeluaran_edit');
+                // for (var i = 0; i < select.options.length; i++) {
+                //     if (select.options[i].value === data.kategori_pengeluaran) {
+                //         select.selectedIndex = i;
+                //         break;
+                //     }
+                // }
             }
         </script>
 

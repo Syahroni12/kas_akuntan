@@ -17,6 +17,8 @@ if (isset($_GET['id'])) {
 
     if ($result) {
         // Jika proses hapus berhasil, arahkan kembali ke halaman pengurus
+        $_SESSION['berhasil_hapus'] = '<div class="alert alert-success" role="alert">Data berhasil di hapus.</div>';
+        
         header("Location: pengeluaran.php");
         exit();
     } else {

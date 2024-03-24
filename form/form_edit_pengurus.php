@@ -2,10 +2,11 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
-                <h5 class="modal-title" id="editPengurusModalLabel">Edit Pegawai</h5>
+                <h5 class="modal-title" id="editPengurusModalLabel">Edit Divisi</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+
             </div>
             <div class="modal-body">
                 <!-- Form Edit Pengurus -->
@@ -13,21 +14,18 @@
                     <input type="hidden" id="edit_id" name="edit_id">
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="edit_nama">Nama:</label>
-                            <input type="text" class="form-control" id="edit_nama" name="edit_nama" required>
+                            <label for="edit_divisi">Divisi</label>
+                            <input type="text" class="form-control" id="edit_divisi" name="edit_divisi" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="penanggung_jawab">Penanggung Jawab</label>
+                            <input type="text" class="form-control" id="penanggung_jawab" name="penanggung_jawab" required>
                         </div>
                         <!-- <div class="form-group col-md-6">
                             <label for="edit_id_jabatan">Jabatan:</label>
                             <select class="form-control" id="edit_id_jabatan" name="edit_id_jabatan" required>
                                 <option value="">Pilih Jabatan</option>
-                                <?php
-                                include('inc/koneksi.php');
-                                $query = "SELECT * FROM jabatan";
-                                $result = mysqli_query($koneksi, $query);
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo "<option value='" . $row['id'] . "'>" . $row['nama'] . "</option>";
-                                }
-                                ?>
+                                
                             </select>
                         </div> -->
                     </div>
@@ -59,3 +57,5 @@
         </div>
     </div>
 </div>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>

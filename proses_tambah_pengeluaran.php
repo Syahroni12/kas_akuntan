@@ -8,19 +8,23 @@ if (!isset($_SESSION['user_id'])) {
 include('inc/koneksi.php');
 
 // Pastikan data yang diterima valid
-if (isset($_POST['nomor_nota']) && isset($_POST['tanggal']) && isset($_POST['id_pengurus']) && isset($_POST['jumlah'])) {
+
+if (isset($_POST['nomor_nota']) && isset($_POST['tanggal']) && isset($_POST['ppppp']) && isset($_POST['jumlah'])&& isset($_POST['id_pengurus'])&& isset($_POST['keterangan']) ) {
     $nomor_nota = $_POST['nomor_nota'];
     $tanggal = $_POST['tanggal'];
     $id_pengurus = $_POST['id_pengurus'];
-    $keterangan = isset($_POST['keterangan']) ? $_POST['keterangan'] : '';
+    $id_uraianpngl = $_POST['ppppp'];
+    $keterangan = $_POST['keterangan'];
+
     $jumlah = $_POST['jumlah'];
+    $jumlah_fix = preg_replace("/[^0-9]/", "", $jumlah);
 
     // Lakukan proses tambah penerimaan kas ke database
-    $query = "INSERT INTO pengeluaran (nomor_nota, tanggal, id_pengurus,  keterangan, jumlah) VALUES ('$nomor_nota', '$tanggal', '$id_pengurus', '$keterangan', '$jumlah')";
+    $query = "INSERT INTO pengeluaran (nomor_nota, tanggal, id_pengurus,  id_uraianpngl, jumlah,keterangan) VALUES ('$nomor_nota', '$tanggal', '$id_pengurus', '$id_uraianpngl', '$jumlah_fix','$keterangan')";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
-        // Jika proses tambah berhasil, arahkan kembali ke halaman penerimaan kas
+        $_SESSION['berhasil_tambah'] = '<div class="alert alert-success" role="alert">Data berhasil di tambah.</div>';
         header("Location: pengeluaran.php");
         exit();
     } else {
